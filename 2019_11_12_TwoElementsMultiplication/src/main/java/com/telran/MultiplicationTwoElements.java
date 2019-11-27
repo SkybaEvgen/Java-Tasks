@@ -7,8 +7,11 @@
 
 package com.telran;
 
+import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /*
 Первый способ решения
@@ -17,7 +20,7 @@ import java.util.LinkedList;
 и потом число n делим на эти числа, полученное значение ищем в массиве с помощью метода binarySearch
 */
 public class MultiplicationTwoElements {
-    public boolean findTwoElementsMultipliers(int [] array, int n) {
+    public boolean findTwoElementsMultipliers1(int [] array, int n) {
         int indexSqrt = Arrays.binarySearch(array, (int) Math.sqrt(n));
         if (indexSqrt < 0) {
             indexSqrt = indexSqrt * (-1) -1;
@@ -59,5 +62,34 @@ n тогда удаляем первый элемент из очереди, е�
             linkedList.pollFirst();
         } else linkedList.pollLast();
         return find(linkedList, n);
+    }
+
+    /////////////////////////////////////////////////////////////
+    // метод решения в классе
+    public boolean findTwoElementsMultipliers(int[] array, int number){
+        ArrayDeque<Integer> dividerQueue = new ArrayDeque<>();
+
+        for(int member:array) {
+            if(number%member == 0)
+                dividerQueue.addLast(member);
+        }
+
+        while (dividerQueue.size() > 1) {
+            int first = dividerQueue.getFirst();
+            int last = dividerQueue.getLast();
+            int product = first*last;
+
+            if(product == number)
+                return true;
+
+            if (product > number) {
+                dividerQueue.removeFirst();
+                continue;
+            }
+
+            dividerQueue.removeFirst();
+        }
+
+        return false;
     }
 }

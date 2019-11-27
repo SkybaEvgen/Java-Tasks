@@ -39,4 +39,22 @@ public class SearchDuplicateInArray {
         int maxValue = Collections.max(arrayHashMap.values());
         return maxValue > (array.length) / 2;
     }
+
+    /*public boolean searchDuplicate (int [] array) {
+
+        return searchDuplicate(array, 0, array.length - 1);
+    }
+
+    public int searchDuplicate (int [] array, int left, int right){
+        if (left == right) {
+            return -1;
+        }
+        if (left + 1 == right) {
+            return array[left];
+        }
+
+        int middle = (right + left) / 2;
+        int mLeft =
+    }*/
+
 }

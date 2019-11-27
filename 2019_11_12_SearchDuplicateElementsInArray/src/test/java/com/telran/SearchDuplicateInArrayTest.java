@@ -42,4 +42,22 @@ public class SearchDuplicateInArrayTest {
         int[] arr = {1};
         assertFalse(search.searchDuplicate(arr));
     }
+
+    @Test
+    public void testSearchDuplicateInArray6 () {
+        int[] arr = {-2, 1, -1, -2, -2};
+        assertTrue(search.searchDuplicate(arr));
+    }
+
+    @Test
+    public void testSearchDuplicateInArray7 () {
+        int[] arr = {-2, 1, -1, -2, -2, 5, 6, -2, 1, -2};
+        assertFalse(search.searchDuplicate(arr));
+    }
+
+    @Test
+    public void testSearchDuplicateInArray8 () {
+        int[] arr = {-2, 1, -1, -2, -2, 5, -2, -2, 1, 3};
+        assertFalse(search.searchDuplicate(arr));
+    }
 }

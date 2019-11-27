@@ -16,7 +16,7 @@ public class PatternTextTest {
 
     @Test
     public void testPatternText1 () {
-        assertTrue(patText.patternText("Hwd", "Hello world"));
+        assertTrue(patText.patternText("el", "Hello world"));
     }
 
     @Test
@@ -31,7 +31,7 @@ public class PatternTextTest {
 
     @Test
     public void testPatternText4 () {
-        assertTrue(patText.patternText("Lor Ipislymmy te", "Lorem Ipsum is simply dummy text"));
+        assertTrue(patText.patternText("or Ipislymmy te", "Lorem Ipsum is simply dummy text"));
     }
 
     @Test
