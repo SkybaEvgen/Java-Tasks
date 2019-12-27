@@ -61,4 +61,15 @@ public class FindPointInSegmentTest {
         assertEquals(expected, findPoints.findMinPointInSegment(listRes));
 //        System.out.println(findPoints.findMinPointInSegment(listRes));
     }
+///////////////////////////////////////////////////////////////////////////////////////////
+    @Test
+    public void testFindPointInSegment6() {
+        Sections section1 = new Sections(0, 20);
+        Sections section2 = new Sections(5, 10);
+        List<Sections> listRes = Arrays.asList(section1, section2);
+        List<Integer> expected = Arrays.asList(10);
+        assertEquals(expected, findPoints.findMinPointInSegment(listRes));
+//        System.out.println(findPoints.findMinPointInSegment(listRes));
+    }
+
 }
