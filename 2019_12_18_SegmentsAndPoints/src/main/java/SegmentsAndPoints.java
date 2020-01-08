@@ -36,9 +36,6 @@ public class SegmentsAndPoints {
                 qtySegments--;
             }
         }
-
-       /* System.out.println(listPoints);
-        List<Integer> expected = Arrays.asList(0, 2, 1, 1, 1, 3, 0);*/
         return result;
     }
 
