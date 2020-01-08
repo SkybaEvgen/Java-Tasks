@@ -2,7 +2,6 @@
 Найти для каждой точки количество отрезков,
 которые её покрывают.
  */
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -12,27 +11,28 @@ public class SegmentsAndPoints {
         int qtySegments = 0;
         List<Integer> result = new ArrayList<>();
         List<Point> listPoints = new ArrayList<>();
-        for (Double aDouble : points) {
-            Point point = new Point(0, aDouble);
+
+        for (Double pointValue : points) {
+            Point point = new Point(0, pointValue);
             listPoints.add(point);
         }
 
-        for (Segment segment : segments) {
-            Point pointLeft = new Point(1, segment.getLeft());
-            Point pointRight = new Point(2, segment.getRight());
+        for (Segment segmentValue : segments) {
+            Point pointLeft = new Point(1, segmentValue.getLeft());
+            Point pointRight = new Point(2, segmentValue.getRight());
             listPoints.add(pointLeft);
             listPoints.add(pointRight);
         }
 
         Collections.sort(listPoints);
-        for (Point listPoint : listPoints) {
-            if (listPoint.getKind() == 0) {
+        for (Point listPointValue : listPoints) {
+            if (listPointValue.getKind() == 0) {
                 result.add(qtySegments);
             }
-            if (listPoint.getKind() == 1) {
+            if (listPointValue.getKind() == 1) {
                 qtySegments++;
             }
-            if (listPoint.getKind() == 2) {
+            if (listPointValue.getKind() == 2) {
                 qtySegments--;
             }
         }

@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public class Point implements Comparable<Point> {
     int kind;
     double value;
@@ -11,15 +9,6 @@ public class Point implements Comparable<Point> {
 
     public int getKind() {
         return kind;
-    }
-
-    public double getValue() {
-        return value;
-    }
-
-    @Override
-    public String toString() {
-        return "kind " + kind + ", value " + value;
     }
 
     @Override
