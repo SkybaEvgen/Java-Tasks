@@ -1,0 +1,26 @@
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+/* 
+Программа должна:
+Переписать все байты одного файла в другой одним куском.
+*/
+
+public class Read_and_write_file {
+    public static void main(String[] args) throws IOException {
+        FileInputStream inputStream = new FileInputStream("e:/data.txt");
+        // Создаем поток-записи-байт-в-файл
+        FileOutputStream outputStream = new FileOutputStream("e:/result.txt");
+
+        if (inputStream.available() > 0) {
+            //читаем весь файл одним куском
+            byte[] buffer = new byte[inputStream.available()];
+            int count = inputStream.read(buffer);
+            outputStream.write(buffer, 0, count);
+        }
+
+        inputStream.close();
+        outputStream.close();
+    }
+}
