@@ -29,7 +29,7 @@ public class Read_file_2 {
         Set<Integer> setBites = new TreeSet<>();
         List<Integer> listTemp = new ArrayList<>();
 
-        while (inputStream.read() > 0) {
+        while (inputStream.available() > 0) {
             int data = inputStream.read();
             listTemp.add(data);
             setBites.add(data);
